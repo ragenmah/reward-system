@@ -8,6 +8,7 @@
 </head>
 <body>
     <center>
+        <h1>Your Orders</h1>
         <Table cellpadding=5 >
             <th>Order ID</th>
             <th>Items</th>
