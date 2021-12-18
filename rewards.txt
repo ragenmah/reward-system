@@ -1,0 +1,15 @@
+sp with tax = Rs. 5 with 6% tax 
+tax = 6%
+tax amount = ?
+
+now, 
+
+sp with tax = sp + tax amount 
+          Rs. 5 = x  + tax % of sp
+          Rs. 5 = x + 6/100 * x
+          Rs. 5 = 53x/50
+          x = (5 * 50)/ 53
+
+tax amount = tax % of sp 
+	  = 6/100 * (5*50)/53
+	 = 0.283 

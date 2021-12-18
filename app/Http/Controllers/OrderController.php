@@ -23,20 +23,23 @@ class OrderController extends Controller
                         END) as Total_Sales_Amount "
                 )
             )->get();
-        
-            $fetch_all=DB::table('orders')
+
+        $fetch_all = DB::table('orders')
             ->join('orders_products', "orders.Order_ID", "=", "orders_products.Order_ID")
-            ->select(DB::raw("distinct orders.Order_ID as orderId"
-            ),
-            DB::raw(
-                "(CASE 
+            ->select(
+                DB::raw(
+                    "distinct orders.Order_ID as orderId"
+                ),
+                DB::raw(
+                    "(CASE 
                             when orders.Sales_Type= 'Normal' 
                                 THEN orders_products.Normal_Price 
                             ELSE orders_products.Promotion_Price 
                     END) as sales_amount "
-            ),"orders_products.Item_Name"
-                            )
+                ),
+                "orders_products.Item_Name"
+            )
             ->get();
-        return view("Order", compact('fetch_orders','fetch_all'));
+        return view("Order", compact('fetch_orders', 'fetch_all'));
     }
 }

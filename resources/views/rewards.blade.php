@@ -18,31 +18,72 @@
             <th>Rewarded points</th>
             <th>new order?</th>
             <th>Remaining points</th>
+            <th>Reward Price</th>
             <th>Expiry Date</th>
             <tr>
                 <td>1</td>
                 <td>Ram</td>
-                <td><input type="number" name="sales amount" id="salesAmount"></td>
-                <td><button type="submit">Complete your order</button></td>
-                <td>Complete</td>
-                <td>1</td>
-                <td><button type="submit">new order</button></td>
-                <td>11</td>
-                <td>date</td>
+                <td>$<input type="number" name="sales amount" id="salesAmount-1"></td>
+                <td><button type="submit" value="1" onclick="completeOrders(1,'false')">Complete your order</button></td>
+                <td id="status-1">Incomplete</td>
+                <td id="reward-points-1">0</td>
+                <td><button type="submit" onclick="completeOrders(1,'true')">new order</button></td>
+                <td id="remain-points-1">0</td>
+                <td id="reward-price-1">0</td>
+                <td id="expire-date-1">N/A</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Shyam</td>
-                <td><input type="number" name="sales amount" id="salesAmount"></td>
-                <td><button type="submit">Complete your order</button></td>
-                <td>Pending</td>
-                <td>2</td>
-                <td><button type="submit">new order</button></td>
-                <td>1231</td>
-                <td>asd</td>
+                <td>Hari</td>
+                <td>$<input type="number" name="sales amount" id="salesAmount-2"></td>
+                <td><button type="submit" value="1" onclick="completeOrders(2,'false')">Complete your order</button></td>
+                <td id="status-2">Incomplete</td>
+                <td id="reward-points-2">0</td>
+                <td><button type="submit" onclick="completeOrders(2,'true')">new order</button></td>
+                <td id="remain-points-2">0</td>
+                <td id="reward-price-2">0</td>
+                <td id="expire-date-2">N/A</td>               
             </tr>
         </table>
+       
     </center>
 
 </body>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script>
+  
+   function completeOrders(userid,new_order) {
+       var sales_amount=$("#salesAmount-"+userid).val();
+       var reward_points=$("#reward-points-"+userid).val();
+       var remain_Points=$("#remain-points-"+userid).text();
+       var expire_date=$("#expire-date-"+userid).text();
+       var reward_price=$("#reward-price-"+userid).text();
+       console.log(new_order);
+      $.ajax({
+         type:'POST',
+         url:'/addrewards',
+         data: { salesAmount: sales_amount, 
+                 rewardPoints:reward_points, 
+                 remainPoints:remain_Points, 
+                 expireDate:expire_date,
+                 rewardPrice:reward_price,
+                 newOrder:new_order,
+                 customerId:userid, 
+                 _token: '{{csrf_token()}}' },
+         success:function(data) {
+             console.log(data);
+             if(sales_amount!=0 || new_order=='true'){
+                $("#status-"+userid).html(data.status);
+                $("#salesAmount-"+userid).val(0);
+                $("#reward-points-"+userid).html(data.rewardPoints);
+                $("#remain-points-"+userid).html(data.remainingPoints);
+                $("#expire-date-"+userid).html(data.expireDate);
+                $("#reward-price-"+userid).html(data.rewardPrice);
+            }
+        }
+      });
+   }
+</script>
 </html>

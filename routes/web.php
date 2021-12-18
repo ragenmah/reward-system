@@ -23,5 +23,7 @@ Route::get('/orders', [OrderController::class, 'index'])->name("orders");
     
 Route::get('/rewards', [RewardController::class, 'index'])->name("rewards");
     
+Route::post('/addrewards', [RewardController::class, 'addRewardPoints']);
+    
 
 
