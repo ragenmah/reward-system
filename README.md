@@ -1,5 +1,7 @@
 # Technology used : 
    Laravel, JQquery and ajax
+# routes used :
+ Two routes are used rewards and orders
 ## Question 1 - Visualize Solution and PHP Coding
     Here I have created the reward system. The output is as following:
     
