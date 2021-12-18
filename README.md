@@ -2,7 +2,9 @@
 
 ## Question 1 - Visualize Solution and PHP Coding
     Here I have created the reward system. The output is as following:
-    ![image](https://user-images.githubusercontent.com/30024247/146635912-bb610f5c-ef72-4418-8cf1-92549826cfbf.png)
+    
+![image](https://user-images.githubusercontent.com/30024247/146636491-0ebc54a5-5424-4b98-9d7f-01859d4da211.png)
+
     The output shows that when ther is two users and if they clicked "complete order" button the rewards point and remaining points will be shown . Also the reward points will be saved in the database with their issued date, rewarded price.
 
 # uml design
