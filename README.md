@@ -1,8 +1,9 @@
-
-
+# Technology used : Laravel
 ## Question 1 - Visualize Solution and PHP Coding
     Here I have created the reward system. The output is as following:
-    ![image](https://user-images.githubusercontent.com/30024247/146635912-bb610f5c-ef72-4418-8cf1-92549826cfbf.png)
+    
+![image](https://user-images.githubusercontent.com/30024247/146636491-0ebc54a5-5424-4b98-9d7f-01859d4da211.png)
+
     The output shows that when ther is two users and if they clicked "complete order" button the rewards point and remaining points will be shown . Also the reward points will be saved in the database with their issued date, rewarded price.
 
 # uml design
@@ -21,7 +22,12 @@
  
 ![image](https://user-images.githubusercontent.com/30024247/146636112-48077333-c63f-40c1-a2cc-957f60399c0e.png)
 
-## Poject support 
+## Project support 
    To run the project follow the following steps
-   1. Import the sql database file from the given link :
---  php artisan migrate
+   1. Import the sql database file from the given link : 
+        https://github.com/ragenmah/reward-system/blob/master/question2.sql
+   2. After the importing the sql file, Run the following commands if necessary:
+   3. php artisan key:generate (if needed)
+   4. php artisan migrate
+   5. php artisan db:seed
+   6. php artisan serve
