@@ -1,4 +1,5 @@
-# Technology used : Laravel
+# Technology used : 
+   Laravel, JQquery and ajax
 ## Question 1 - Visualize Solution and PHP Coding
     Here I have created the reward system. The output is as following:
     
