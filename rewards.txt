@@ -5,11 +5,11 @@ tax amount = ?
 now, 
 
 sp with tax = sp + tax amount 
-          Rs. 5 = x  + tax % of sp
-          Rs. 5 = x + 6/100 * x
-          Rs. 5 = 53x/50
+          MYR 5 = x  + tax % of sp
+          MYR 5 = x + 6/100 * x
+          MYR 5 = 53x/50
           x = (5 * 50)/ 53
 
 tax amount = tax % of sp 
 	  = 6/100 * (5*50)/53
-	 = 0.283 
+	 = MYR 0.283 

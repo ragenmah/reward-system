@@ -24,7 +24,7 @@
 
 ## Project support 
    To run the project follow the following steps
-   1. Import the sql database file from the given link : 
+   1. Import the sql database file (included in project also) from the given link : 
         https://github.com/ragenmah/reward-system/blob/master/question2.sql
    2. After the importing the sql file, Run the following commands if necessary:
    3. php artisan key:generate (if needed)
