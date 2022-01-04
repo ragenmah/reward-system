@@ -25,5 +25,9 @@ Route::get('/rewards', [RewardController::class, 'index'])->name("rewards");
     
 Route::post('/addrewards', [RewardController::class, 'addRewardPoints']);
     
+Route::get('/calculation', function () {
+    return view('calculation');
+});
+
 
 

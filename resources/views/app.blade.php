@@ -60,6 +60,8 @@
         }
 
     </style>
+    @stack('before-styles')
+    @stack('after-styles')
 </head>
 
 <body>
