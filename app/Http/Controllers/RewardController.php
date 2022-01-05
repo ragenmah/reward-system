@@ -64,4 +64,35 @@ class RewardController extends Controller
                    VALUES (null,'$customerId','1','','$reward_id->id')");
         return;
     }
+    
+    public function postRewards(Request $request)
+    {
+        $currency = $request->all()["currency"];
+        $price = $request->all()["priceDetails"];
+        $customerId=$request->all()["customerId"];
+        $orderId=$request->all()["orderId"];
+        if($currency=="NPR"){
+            //change the price into dollar
+            $price= $price/119;
+        }
+        $dateOfSales=now();
+        DB::table("sales")->insert(
+            [
+                "S_ID" =>  null,
+                "C_ID" => 1,
+                "Order_ID" => 1001,
+                "amount" => $price,
+                "status" => "COMPLETE",
+                "date_of_sales" => $dateOfSales
+            ]
+        );
+
+        // DB::table('rewards')->insert([
+        //     "R_ID" => 1,
+        //     "C_ID" => 1,
+        //     "reward_points" => 1,
+        //     "reward_amount" => 1,
+        //     "expire_date" => 1,
+        // ]);
+    }
 }

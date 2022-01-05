@@ -19,11 +19,11 @@
 @section('content')
     <div class="container-all">
         <fieldset>
-            <legend>Calculation</legend>
-            <h3>Order total MYR5.00 has included 6% GST, what is the actual amount of GST in MYR for this
+            <legend>Calculation 💰</legend>
+            <h4>Order total MYR5.00 has included 6% GST, what is the actual amount of GST in MYR for this
                 Order?
-            </h3>
-            <h4><i><b> Solutions:</b></i></h4>
+            </h4>
+            <h5><i><b> Solutions:</b></i></h5>
             <div style="padding-left: 30px;">
                 <h6>
                     <p>Here, We have to find the actual amount of GST and also we have given the following :</p>
@@ -40,15 +40,16 @@
                     MYR 5 = 1.06x<br />
                     x = 5 / 1.06<br />
                     x= 4.7<br />
+                    Therefore true sales price (SP) = MYR 4.7
                 </h6>
-    
+
                 <h6>
                     <p>Now, lets calculate actual amount of GST. </p>
                     tax amount = tax % of sp <br />
                     = 6/100 * 4.7<br />
                     = MYR 0.283 <br />
                 </h6>
-    
+
                 <h6>
                     <p>Therefore, actual amount of GST is <span style="font-weight: bold;">MYR 0.283.</span> </p>
                 </h6>
