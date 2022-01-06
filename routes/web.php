@@ -20,12 +20,14 @@ Route::get('/', function () {
 });
 
 Route::get('/orders', [OrderController::class, 'index'])->name("orders");
-    
+Route::get('/neworder', [OrderController::class, 'neworder'])->name("orders");
+
+
 Route::get('/rewards', [RewardController::class, 'index'])->name("rewards");
-    
+Route::post('/rewardusers', [RewardController::class, 'addRewardUsers']);
 Route::post('/addrewards', [RewardController::class, 'addRewardPoints']);
 Route::post('/postrewards', [RewardController::class, 'postRewards']);
-    
+
 Route::get('/calculation', function () {
     return view('calculation');
 });

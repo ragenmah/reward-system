@@ -14,8 +14,8 @@ class SalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->unsignedBigInteger("S_ID")->primary();
-            $table->unsignedBigInteger("C_ID");
+            $table->bigIncrements("S_ID");
+            $table->unsignedBigInteger('C_ID');
             $table->unsignedBigInteger("Order_ID");
             $table->double("amount");
             $table->string("status");

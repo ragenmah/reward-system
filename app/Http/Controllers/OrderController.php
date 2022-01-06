@@ -42,4 +42,12 @@ class OrderController extends Controller
             ->get();
         return view("Order", compact('fetch_orders', 'fetch_all'));
     }
+
+    public function newOrder(Request $req)
+    {
+        
+        $fetch_rewards=DB::table("rewards")->where("C_ID",1)->get();
+        
+        return View("new_order", compact('fetch_rewards'));
+    }
 }
