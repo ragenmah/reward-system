@@ -28,7 +28,8 @@ To run the project follow the following steps
 ![complete_order](https://user-images.githubusercontent.com/30024247/148479289-e9b8efad-fdce-46db-8d6f-1052c3397455.JPG)
 ![new_order](https://user-images.githubusercontent.com/30024247/148479293-9a887aea-949b-4600-9e61-19eaa4a46988.JPG)
 ![claim_confirm](https://user-images.githubusercontent.com/30024247/148479284-c77dc1e8-eb12-481f-addd-464c21bb3caf.JPG)
- Here i have created static customer 
+ Here the customer can confirm the order with the payment or without the payment. If customer choose without payment option, then that order will be in PENDING status and reward will not be added. And, if customer choose the country currency and make the payment, the status will be in COMPLETE and also reward points will be added.
+ Customer can use those reward amount and comfirm the reward use.
 
 ## uml design
 # Use case Diagram
